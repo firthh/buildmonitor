@@ -1,0 +1,20 @@
+require 'json'
+require 'chicanery/cctray'
+include Chicanery::Cctray
+
+cctray 'travis', 'https://api.travis-ci.org/repositories/travis-ci/travis-api/cc.xml'
+cctray 'rails', 'https://api.travis-ci.org/repositories/rails/rails/cc.xml'
+cctray 'hub', 'https://api.travis-ci.org/repositories/github/hub/cc.xml'
+cctray 'chicanery', 'https://api.travis-ci.org/repositories/markryall/chicanery/cc.xml'
+
+require 'pp'
+
+when_run do |state|
+  builds = []
+  state[:servers].each do |server_name, jobs|
+    jobs.each do |job_name, job|
+      builds << {name: server_name, status: job[:last_build_status], activity: job[:activity]}
+    end
+  end
+  File.open('builds.json', 'w') {|f| f.puts builds.to_json}
+end
