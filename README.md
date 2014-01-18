@@ -22,6 +22,8 @@ See [chicanery](https://github.com/markryall/chicanery) for more details.
 
 Note the complete absence of styling. Please fork and add some styling to the *stylesheets/main.scss* and or editing the template in *javascripts/main.coffee*.
 
+* run *guard* in this folder to automatically regenerate the *stylesheets/main.css* and *javascripts/main.js* files from the sass and coffeescript equivalents.
+
 ## development
 
 Plenty more build information is available - see the generated *state* file.
