@@ -1,0 +1,32 @@
+---
+:servers:
+  travis:
+    travis-ci/travis-api:
+      :activity: :sleeping
+      :last_build_status: :success
+      :last_build_time: 1389992103
+      :url: https://travis-ci.org/travis-ci/travis-api
+      :last_label: '955'
+  rails:
+    rails/rails:
+      :activity: :sleeping
+      :last_build_status: :failure
+      :last_build_time: 1390018571
+      :url: https://travis-ci.org/rails/rails
+      :last_label: '13380'
+  hub:
+    github/hub:
+      :activity: :sleeping
+      :last_build_status: :success
+      :last_build_time: 1389995889
+      :url: https://travis-ci.org/github/hub
+      :last_label: '172'
+  chicanery:
+    markryall/chicanery:
+      :activity: :sleeping
+      :last_build_status: :success
+      :last_build_time: 1383659479
+      :url: https://travis-ci.org/markryall/chicanery
+      :last_label: '90'
+:repos: {}
+:sites: {}
