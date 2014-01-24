@@ -1,11 +1,11 @@
-.activity-sleeping {
+.activity-Sleeping {
   color: black; }
 
-.activity-building {
+.activity-Building {
   color: blue; }
 
-.status-failure {
+.status-Failure {
   background-color: red; }
 
-.status-success {
+.status-Success {
   background-color: green; }
