@@ -12,6 +12,9 @@
             [clojure.zip :as zip])
   (:gen-class))
 
+(def cc-tray-url
+  "https://api.travis-ci.org/repositories/github/hub/cc.xml")
+
 ;;copy-pasta from clojure docs
 (defn zip-str [s]
   (zip/xml-zip (xml/parse (java.io.ByteArrayInputStream. (.getBytes s)))))
@@ -30,7 +33,7 @@
   (GET "/" []
        (resp/file-response "index.html" {:root "resources"}))
   (GET "/builds.json" []
-       (process-cc-tray "https://api.travis-ci.org/repositories/github/hub/cc.xml"))
+       (process-cc-tray cc-tray-url))
   (route/files "/" {:root "resources"})
   (route/not-found (json-str {:error "not found"}))
 )
